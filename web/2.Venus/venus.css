@@ -1,0 +1,26 @@
+ *{
+        margin: 0;
+        padding: 0;
+        font-family: 'poppins', sans-serif;
+    }
+
+body{
+    text-align: center;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(venus.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+.title{
+    margin-top: 100px;
+    color: #fff;
+}
+.title h1{
+    font-size: 28px;
+    line-height: 10px;
+}
+.title{
+    font-size: 19px;
+    padding: 20px;
+}
+
+
