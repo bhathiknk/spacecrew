@@ -1,5 +1,76 @@
+<?php include_once('inc/conn.php');?>
+<?php
+
+    if(isset($_POST['submit'])){
+
+        //Declaring variables and assign empty values
+		$username = "";
+        $email = "";
+        $password = "";
+        $msg = "";
+
+        $username = input_varify($_POST['username']);
+        $email = input_varify($_POST['email']);
+        $password = input_varify($_POST['password']);
+
+        $query1 = "SELECT * FROM users WHERE username = '{$username}' AND email = '{$email}'";
+
+        $ShowResult = mysqli_query($conn, $query1);
+
+        if($ShowResult){
+
+            if(mysqli_num_rows($ShowResult) == 1){
+
+                $msg = "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+            <strong>Sorry!</strong> This user already have in this system.Please try another email account.
+            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+              <span aria-hidden='true'>&times;</span>
+            </button>
+          </div>";
+
+            }
+            else{
+
+                $query = "INSERT INTO users(username,email,password,date) VALUES( 
+					'{$username}','{$email}','{$password}',NOW()
+				)";
+        
+                
+                $result = mysqli_query($conn, $query);
+        
+                if($result){
+                    
+                    $msg = "<div class='alert alert-primary alert-dismissible fade show' role='alert'>
+                    <strong>User Registration Success!</strong> Welcome to the SpaceCrew Community.
+                    <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                      <span aria-hidden='true'>&times;</span>
+                    </button>
+                  </div>";
+        
+                }
+                else{
+                    echo mysqli_error($conn);
+                }
+
+            }
+
+        }
+
+    }
 
 
+    function input_varify($data){
+        //Remove empty spece from user input
+        $data = trim($data);
+        //Remove back slash from user input
+        $data  = stripslashes($data);
+        //conver special chars to html entities
+        $data = htmlspecialchars($data);
+
+        return $data;
+    }
+
+?>
 
 
 <!doctype html>
@@ -27,24 +98,25 @@
 				<div class="col-md-6 col-lg-4">
 					<div class="login-wrap p-0">
 		      	<h3 class="mb-4 text-center">Don't Have an account?</h3>
-		      	<form action="signup.php" class="signin-form" method="POST">
+		      	<form action="signup.php"  method="POST">
+				  <?php if(!empty($msg)){echo $msg;}?>
+
+
 		      		<div class="form-group">
-		      			<input id="username" type="username" class="form-control" placeholder="Username" required>
+		      			<input id="username" name="username" type="text" class="form-control" placeholder="username" required>
 		      		</div>
                       <div class="form-group">
-                        <input id="email" type="email" class="form-control" placeholder="Email" required>
+                        <input id="email" name="email" type="email" class="form-control" placeholder="email" required>
                     </div>
+
+
 	            <div class="form-group">
-	              <input id="password" type="password" class="form-control" placeholder="Password" required>
+	              <input id="password" name="password" type="password" class="form-control" placeholder="password" required>
 	              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 	            </div>
 
-				<div class="form-group">
-					<input id="cpassword" type="cpassword" class="form-control" placeholder="Comfirm Password" required>
-					<span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
-				  </div>
 	            <div class="form-group">
-	            	<button type="submit" class="form-control btn btn-primary submit px-3">Sign Up</button>
+	            	<button type="submit" name="submit" class="form-control btn btn-primary submit px-3">Sign Up</button>
 	            </div>
 	          </form>
 

@@ -1,3 +1,68 @@
+
+<?php include_once('inc/conn.php');?>
+<?php
+
+    if(isset($_POST['submit'])){
+
+        //Declaring variables and assign empty values
+		$username = "";
+        $password = "";
+        $msg = "";
+
+        $username = input_varify($_POST['username']);
+        $password = input_varify($_POST['password']);
+
+        $query1 = "SELECT * FROM users WHERE username = '{$username}' AND password = '{$password}'";
+
+        $ShowResult = mysqli_query($conn, $query1);
+
+        if($ShowResult){
+
+            if(mysqli_num_rows($ShowResult) == 1){
+
+				
+                
+                header("Location:../index.html");
+
+            }
+            else{
+
+                $msg = "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+            <strong>Sorry!</strong> This user already have in this system.Please try another email account.
+            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+              <span aria-hidden='true'>&times;</span>
+            </button>
+          </div>";
+
+            }
+
+        }
+
+    }
+
+
+    function input_varify($data){
+        //Remove empty spece from user input
+        $data = trim($data);
+        //Remove back slash from user input
+        $data  = stripslashes($data);
+        //conver special chars to html entities
+        $data = htmlspecialchars($data);
+
+        return $data;
+    }
+
+?>
+
+
+
+
+
+
+
+
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -19,17 +84,27 @@
 				<div class="col-md-6 col-lg-4">
 					<div class="login-wrap p-0">
 		      	<h3 class="mb-4 text-center">Have an account?</h3>
-		      	<form action="#" class="signin-form">
+
+		      	<form action="signin.php" method="POST" >
+				  <?php if(!empty($msg)){echo $msg;}?>
+
+
 		      		<div class="form-group">
-		      			<input id="username" type="username" class="form-control" placeholder="Username" required>
+		      			<input id="username" name="username" type="text" class="form-control" placeholder="Username" required>
 		      		</div>
+
+
 	            <div class="form-group">
-	              <input id="password-field" type="password" class="form-control" placeholder="Password" required>
+	              <input id="password" name="password" type="password" class="form-control" placeholder="Password" required>
 	              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 	            </div>
+
+
 	            <div class="form-group">
 	            	<button type="submit" class="form-control btn btn-primary submit px-3">Sign In</button>
 	            </div>
+
+
 	            <div class="form-group d-md-flex">
 	            	<div class="w-50">
 		            	<label class="checkbox-wrap checkbox-primary">Remember Me
