@@ -1,4 +1,12 @@
 
+
+<?php
+session_start();
+?>
+
+
+
+
 <!DOCTYPE html>
  <html lang="en" class="no-js">
     <head>
@@ -73,13 +81,46 @@
 				<!-- main nav -->
                 <nav class="collapse navbar-collapse navbar-right">
                   <ul class="nav navbar-nav navbar-right navbar-nav-primary">
-      <li><a href="index.html">Home</a></li>
+      <li><a href="index.php">Home</a></li>
 	  <li><a href="solar.html">Solar System</a></li>
       <li><a href="blog.html">Blog</a></li>
       <li><a href="about.html">About Us</a></li>
-      <li><a href="contact.html">Contact Us</a></li> 
-	  <li><a href="log/signup.php">Log In</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+	 
   
+	  <?php
+      
+        if(isset($_SESSION['username'])){
+          
+          echo "
+          
+
+                <li class='collapse navbar-collapse navbar-right'>
+                <a href='log/signout.php'>Sign Out</a>
+                </li>
+
+          ";
+
+        }
+        else{
+
+          echo "
+          
+          <li  class='collapse navbar-collapse navbar-right'>
+          <a  href='log/signin.php'>Sign In</a>
+          </li>
+
+		  <li  class='collapse navbar-collapse navbar-right'>
+          <a  href='log/signup.php'>Sign up</a>
+          </li>
+    ";
+
+        }
+      
+      ?>
+
+
+
     </ul>
     </nav>
 
@@ -341,7 +382,7 @@
 			<div class="container">
 				<div class="row text-center">
 					<div class="footer-content">
-						<p>Copyright &copy; 2022 Design and Developed By <a href="#"><br> SpaceCrew</a> </p>
+						<p>Copyright &copy; 2022 Design and Developed By <a href="index.php"><br> SpaceCrew</a> </p>
 					</div>
 				</div>
 			</div>

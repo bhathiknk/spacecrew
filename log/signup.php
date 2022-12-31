@@ -119,15 +119,9 @@
 	            	<button type="submit" name="submit" class="form-control btn btn-primary submit px-3">Sign Up</button>
 	            </div>
 	          </form>
-
-			  <p class="w-100 text-center"> Or Sign In With</p>
-	          <div class="social d-flex text-center">
-	          	<a href="signin.php" class="px-2 py-2 ml-md-1 rounded"><span class="ion-logo-twitter mr-2"></span> Sign In</a>
-	          </div>
-			  <br>
-
+            <p class="w-100 text-center"> Or</p>
 				<div class="social d-flex text-center">
-	          	<a href="../index.html" class="px-2 py-2 ml-md-1 rounded"><span class="ion-logo-twitter mr-2"></span> Go To Home Page</a>
+	          	<a href="../index.php" class="px-2 py-2 ml-md-1 rounded"><span class="ion-logo-twitter mr-2"></span> Go To Home Page</a>
 	          </div>
 
 		      </div>

@@ -1,5 +1,65 @@
 
 
+<?php
+    session_start();
+?>
+
+<?php include_once('inc/conn.php');?>
+<?php
+
+    if(isset($_POST['submit'])){
+
+        //Declaring variables and assign empty values
+		$username = "";
+        $password = "";
+        $msg = "";
+
+        $username = input_varify($_POST['username']);
+        $password = input_varify($_POST['password']);
+
+        $query1 = "SELECT * FROM users WHERE username = '{$username}' AND password = '{$password}'";
+
+        $ShowResult = mysqli_query($conn, $query1);
+
+        if($ShowResult){
+
+            if(mysqli_num_rows($ShowResult) == 1){
+
+
+				$user = mysqli_fetch_assoc($ShowResult);
+                $_SESSION['username'] = $user['username'];
+                $_SESSION['User_Lname'] = $user['Lname'];
+
+                header("Location: ../index.php");
+
+            }
+            else{
+
+				$msg = "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+				<strong>Sorry!</strong> Please check your email or password.
+				<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+				  <span aria-hidden='true'>&times;</span>
+				</button>
+			  </div>";
+            }
+
+        }
+
+    }
+
+
+    function input_varify($data){
+        //Remove empty spece from user input
+        $data = trim($data);
+        //Remove back slash from user input
+        $data  = stripslashes($data);
+        //conver special chars to html entities
+        $data = htmlspecialchars($data);
+
+        return $data;
+    }
+
+?>
 
 
 
@@ -32,6 +92,7 @@
 		      	<h3 class="mb-4 text-center">Have an account?</h3>
 
 		      	<form action="signin.php" method="POST" >
+				  <?php if(!empty($msg)){echo $msg;}?>
 
 
 		      		<div class="form-group">
@@ -46,7 +107,7 @@
 
 
 	            <div class="form-group">
-	            	<button type="submit" class="form-control btn btn-primary submit px-3">Sign In</button>
+	            	<button type="submit" name="submit" class="form-control btn btn-primary submit px-3">Sign In</button>
 	            </div>
 
 
@@ -62,9 +123,9 @@
 								</div>
 	            </div>
 	          </form>
-			  <p class="w-100 text-center"> Or</p>
+			 
 			  <div class="social d-flex text-center">
-	          	<a href="../index.html" class="px-2 py-2 ml-md-1 rounded"><span class="ion-logo-twitter mr-2"></span> Go To Home Page</a>
+	          	<a href="../index.php" class="px-2 py-2 ml-md-1 rounded"><span class="ion-logo-twitter mr-2"></span> Go To Home Page</a>
 	          </div>
 		      </div>
 				</div>
