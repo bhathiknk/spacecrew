@@ -28,6 +28,8 @@
             </button>
           </div>";
 
+          header("Location: ../index.php");
+
             }
             else{
 
