@@ -1,67 +1,6 @@
 
 
 
-/**
-/*	Header
-/* ==========================================*/
-
-#aboutnavigation {
-
-    background:rgb(0, 0, 0,.5);
-      box-shadow: rgb(5, 226, 255);
-      padding: 5px 0;
-  }
-  
-  #aboutnavigation:hover{
-      border-bottom-left-radius: 0px;
-      border-bottom-right-radius: 0px;
-  
-  
-      
-  }
-  
-  
-  #navigation.animated-header {
-      padding: 20px 0;
-    
-  }
-  
-  h1.aboutnavbar-brand {
-      font-size: 20px;
-      font-weight: 700;
-      margin: 0;
-      text-transform: uppercase;
-      float: left;
-      color: #07ffc9;
-  }
-  
-  .navbar-inverse .navbar-nav > li > a {
-      color:rgb(255, 255, 255);
-      font-size: 15px;
-      text-transform: uppercase;
-  
-  }
-  
-  
-  
-  .banner {
-    background: rgb(255, 255, 255);
-    font-family: Lato, sans-serif;
-  }
-  .navbar-nav-primary {
-    text-transform: uppercase;
-  }
-  
-  
-  .topnav-right {
-    float: right;
-  }
-  
-  
-
-
-
-
 
 /*=================================================================
 	About

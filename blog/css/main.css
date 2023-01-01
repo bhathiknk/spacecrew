@@ -603,6 +603,7 @@ ul.list-in-text li:before {
     font-size: 76px;
     margin-top: -20px;
   }
+}
   
 
 @media (min-width: 768px) and (min-width: 992px) {
@@ -712,4 +713,35 @@ ul.list-in-text li:before {
   .sidebar .popular .card-img-overlay .article-meta span {
     padding-right: 10px;
   }
+}
+
+
+/* blog single page navigation */
+.topnav {
+  background: rgb(0,18,255);
+  background: linear-gradient(90deg, rgba(0,18,255,1) 9%, rgba(16,9,121,1) 31%, rgba(0,0,0,1) 86%);
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+}
+
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
 }

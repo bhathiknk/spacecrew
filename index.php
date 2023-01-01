@@ -72,9 +72,9 @@ session_start();
 
 					<!-- logo -->
 					
-					<h1 class="navbar-brand">
-						<img href="#body">Space<span>Crew</span> </a>
-					</h1>
+					<h11 class="navbar-brand">
+						<a href="#body">Space<span>Crew</span> </a>
+					</h11>
 					<!-- /logo -->
                 </div>
 
@@ -251,11 +251,11 @@ session_start();
 							<li class="portfolio-item">
 								<img src="img/portfolio/728322.jpg" class="img-responsive" >
 								<figcaption  class="mask">
-									<h3>mercury</h3>
+									<h3>Mercury</h3>
 									<p>Mercury is the smallest planet in the solar system. </p>
 								</figcaption>
 								<ul class="external">
-									<li><a  class="fancybox" title="Araund The world" data-fancybox-group="works" href="img/portfolio/728322.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
+									<li><a  class="fancybox"  title="Mercury" data-fancybox-group="works" href="img/portfolio/728322.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
 									<li><a href="web/1.Mercury/mercury.html"><i class="fa fa-arrow-right" aria-hidden="true"></i></a></li>
 								</ul>
 							</li>
@@ -267,31 +267,31 @@ session_start();
 									<p>Venus is the hottest planet in the solar system </p>
 								</figcaption>
 								<ul class="external">
-									<li><a class="fancybox" title="Wall street" href="img/portfolio/116940.jpg" data-fancybox-group="works" ><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
+									<li><a class="fancybox" title="Venus" href="img/portfolio/116940.jpg" data-fancybox-group="works" ><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
 									<li><a href="web/2.Venus/venus.html"><i class="fa fa-arrow-right" aria-hidden="true"></i></a></li>
 								</ul>
 							</li>
 
 							<li class="portfolio-item">
-								<img src="img/portfolio/52268.jpg" class="img-responsive" >
+								<img src="img/portfolio/photo-1614730321146-b6fa6a46bcb4.jpg" class="img-responsive" >
 								<figcaption class="mask">
 									<h3>Earth</h3>
 									<p> Earth is the only place in the known universe confirmed to host life. </p>
 								</figcaption>
 								<ul class="external">
-									<li><a class="fancybox" title="Behind The world" data-fancybox-group="works" href="img/portfolio/52268.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
+									<li><a class="fancybox" title="Earth" data-fancybox-group="works" href="img/portfolio/52268.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
 									<li><a href="web/3.Earth/earth.html"><i class="fa fa-arrow-right" aria-hidden="true"></i></a></li>
 								</ul>
 							</li>
 
 							<li class="portfolio-item">
-								<img src="img/portfolio/465937.jpg" class="img-responsive" >
+								<img src="img/portfolio/istockphoto-647269852-612x612.jpg" class="img-responsive" >
 								<figcaption class="mask">
 									<h3>Mars</h3>
 									<p>Mars is the only planet in the universe completely inhabited by robots! </p>
 								</figcaption>
 								<ul class="external">
-									<li><a class="fancybox" title="Wall street 4" data-fancybox-group="works" href="img/portfolio/465937.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
+									<li><a class="fancybox" title="Mars" data-fancybox-group="works" href="img/portfolio/465937.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
 									<li><a href="web/4.Mars/mars.html"><i class="fa fa-arrow-right" aria-hidden="true"></i></a></li>
 								</ul>
 							</li>
@@ -303,7 +303,7 @@ session_start();
 									<p>It is the first of the four "gas giant" planets in proximity to the Sun. </p>
 								</figcaption>
 								<ul class="external">
-									<li><a class="fancybox" title="Wall street 5" data-fancybox-group="works" href="img/portfolio/223952.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
+									<li><a class="fancybox" title="Jupiter" data-fancybox-group="works" href="img/portfolio/223952.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
 									<li><a href="web/5.Jupiter/jupiter.html"><i class="fa fa-arrow-right" aria-hidden="true"></i></a></li>
 								</ul>
 							</li>
@@ -315,7 +315,7 @@ session_start();
 									<p>Saturn is a "gas giant" composed primarily of hydrogen and helium. </p>
 								</figcaption>
 								<ul class="external">
-									<li><a class="fancybox" title="Wall street 6" data-fancybox-group="works" href="img/portfolio/160366.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
+									<li><a class="fancybox" title="Saturn" data-fancybox-group="works" href="img/portfolio/160366.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
 									<li><a href="web/6.Saturn/saturn.html"><i class="fa fa-arrow-right" aria-hidden="true"></i></a></li>
 								</ul>
 							</li>
@@ -327,19 +327,19 @@ session_start();
                   <p> the planet has an enormous 98 degree tilt on its axis. </p>
                 </figcaption>
                 <ul class="external">
-                  <li><a class="fancybox" title="Wall street 5" data-fancybox-group="works" href="img/portfolio/415194.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
+                  <li><a class="fancybox" title="Uranus" data-fancybox-group="works" href="img/portfolio/415194.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
                   <li><a href="web/7.Uranus/uranus.html"><i class="fa fa-arrow-right" aria-hidden="true"></i></a></li>
                 </ul>
               </li>
 
               <li class="portfolio-item">
-                <img src="img/portfolio/169387.jpg" class="img-responsive" >
+                <img src="img/portfolio/istockphoto-1023066596-170667a.jpg" class="img-responsive" >
                 <figcaption class="mask">
                   <h3>Neptune</h3>
-                  <p>It's made of a thick fog of water, ammonia, and methane over an Earth-sized solid center. </p>
+                  <p>Neptune’s Surface Gravity is Almost Earth-like </p>
                 </figcaption>
                 <ul class="external">
-                  <li><a class="fancybox" title="Wall street 5" data-fancybox-group="works" href="img/portfolio/169387.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
+                  <li><a class="fancybox" title="Neptune" data-fancybox-group="works" href="img/portfolio/169387.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
                   <li><a href="web/8.Neptune/neptune.html"><i class="fa fa-arrow-right" aria-hidden="true"></i></a></li>
                 </ul>
               </li>
