@@ -95,7 +95,7 @@ session_start();
           echo "
           
 
-                <li class='collapse navbar-collapse navbar-right'>
+                <li >
                 <a href='log/signout.php'>Sign Out</a>
                 </li>
 
@@ -106,11 +106,11 @@ session_start();
 
           echo "
           
-          <li  class='collapse navbar-collapse navbar-right'>
+          <li >
           <a  href='log/signin.php'>Sign In</a>
           </li>
 
-		  <li  class='collapse navbar-collapse navbar-right'>
+		  <li >
           <a  href='log/signup.php'>Sign up</a>
           </li>
     ";
