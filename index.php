@@ -327,7 +327,7 @@ session_start();
                   <p> the planet has an enormous 98 degree tilt on its axis. </p>
                 </figcaption>
                 <ul class="external">
-                  <li><a class="fancybox" title="Uranus" data-fancybox-group="works" href="img/portfolio/415194.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
+                  <li><a class="fancybox" title="Uranus" data-fancybox-group="works" href="img/portfolio/12345.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
                   <li><a href="web/7.Uranus/uranus.html"><i class="fa fa-arrow-right" aria-hidden="true"></i></a></li>
                 </ul>
               </li>
