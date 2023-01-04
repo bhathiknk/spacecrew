@@ -365,6 +365,7 @@ h11.navbar-brand a{
     text-transform: uppercase;
     float: left;
     color: #1d0fdf;
+    text-transform: uppercase;
 }
 
 .navbar-inverse .navbar-nav > li > a {
