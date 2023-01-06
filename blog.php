@@ -1,3 +1,11 @@
+
+<?php
+session_start();
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -67,6 +75,25 @@
 <li><a href="blog.html">Blog</a></li>
 <li><a href="about.html">About Us</a></li>
 <li><a href="contact.html">Contact Us</a></li> 
+
+
+
+<?php
+      
+        if(isset($_SESSION['username'])){
+          
+          echo "
+          
+
+                <li >
+                <a href='log/signout.php'>Create Blog</a>
+                </li>
+
+          ";
+
+        }
+      
+      ?>
 
 </ul>
 </nav>
