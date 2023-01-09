@@ -28,7 +28,6 @@
 
 				$user = mysqli_fetch_assoc($ShowResult);
                 $_SESSION['username'] = $user['username'];
-                $_SESSION['User_Lname'] = $user['Lname'];
 
                 header("Location: ../index.php");
 

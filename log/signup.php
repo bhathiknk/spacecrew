@@ -1,3 +1,6 @@
+
+
+
 <?php include_once('inc/conn.php');?>
 <?php
 
@@ -28,7 +31,7 @@
             </button>
           </div>";
 
-          header("Location: ../index.php");
+  
 
             }
             else{

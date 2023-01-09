@@ -793,7 +793,7 @@ ul.external li a:hover {
 ==================================================================*/
 #social {
     background-image: url(../img/slider/banner3.jpg);
-    padding: 0;
+    padding: 100px 0 150px;
     border-radius: 6px;
     position: relative;
     
@@ -905,6 +905,7 @@ textarea.form-control {
     padding: 20px;
     color: #fff;
     bottom: 0;
+    padding-bottom: 0;
 }
 
 .footer-content {

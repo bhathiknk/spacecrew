@@ -83,7 +83,7 @@ session_start();
                   <ul class="nav navbar-nav navbar-right navbar-nav-primary">
       <li><a href="index.php">Home</a></li>
 	  <li><a href="solar.html">Solar System</a></li>
-      <li><a href="blog.html">Blog</a></li>
+      <li><a href="blog.php">Blog</a></li>
       <li><a href="about.html">About Us</a></li>
       <li><a href="contact.html">Contact Us</a></li>
 	 
