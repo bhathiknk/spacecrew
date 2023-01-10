@@ -1,8 +1,57 @@
+<?php include_once('./log/inc/conn.php');?>
+
+<?php
+
+    if(isset($_POST['submit'])){
+
+        //Defiene and assign a values for the variable
+        $con_Name = input_varify($_POST['name']);
+        $con_Email =input_varify ($_POST['email']);
+        $con_Subject =input_varify ($_POST['subject']);
+        $con_Message = ($_POST['message']);
+
+
+        //Build database insert query
+        $query = "INSERT INTO contact(Name,Email,Subject,Message) VALUES('{$con_Name}','{$con_Email}','{$con_Subject}','{$con_Message}')";
+
+        $result = mysqli_query($conn, $query);
+
+        if($result){
+            $msg = "
+            
+            <div class='alert alert-primary alert-dismissible fade show' role='alert'>
+            <strong>Post Create Success!</strong> Your Post visibale now.
+            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+              <span aria-hidden='true'>&times;</span>
+            </button>
+          </div>
+
+            ";
+        }
+        else{
+            echo "Message Not Send " . mysqli_error($conn);
+        }
+
+    }
+
+    function input_varify($data){
+
+        $data = TRIM($data);
+        //conver special chars to html entities
+        $data = htmlspecialchars($data);
+        $data  = stripslashes($data);
+        //conver special chars to html entities
+
+
+        return $data;
+    }
+
+?>
+
+
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+
+ <html lang="en" class="no-js"> 
     <head>
     	<!-- meta character set -->
         <meta charset="utf-8">
@@ -10,9 +59,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>SpaceCrew Contact</title>
 		<!-- Meta Description -->
-        <meta name="description" content="Blue One Page Creative HTML5 Template">
-        <meta name="keywords" content="one page, single page, onepage, responsive, parallax, creative, business, html5, css3, css3 animation">
-        <meta name="author" content="Muhammad Morshed">
+        
 
 		<!-- Mobile Specific Meta -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -100,40 +147,47 @@
 
 <br></br>
 <br></br>
+
+<?php include_once('./contact.php')?>
 <!-- Contact section -->
 <section id="contact" >
 	<div class="container">
 		<div class="row">
 
 			<div class="sec-title text-center wow animated fadeInDown">
+           
 				<h2>Contact</h2>
 				<p>Leave a Message</p>
 			</div>
 
 
 			<div class="col-md-7 contact-form wow animated fadeInLeft">
-				<form action="#" method="post">
+				<form action="contact.php" method="POST">
+                <?php if(!empty($msg)){echo $msg;}?>
+
 					<div class="input-field">
-						<input type="text" name="name" class="form-control" placeholder="Your Name...">
+						<input type="text" id="name" name="name" class="form-control" placeholder="Your Name...">
 					</div>
 					<div class="input-field">
-						<input type="email" name="email" class="form-control" placeholder="Your Email...">
+						<input type="email" id="email" name="email" class="form-control" placeholder="Your Email...">
 					</div>
 					<div class="input-field">
-						<input type="text" name="subject" class="form-control" placeholder="Subject...">
+						<input type="text" id="subject" name="subject" class="form-control" placeholder="Subject...">
 					</div>
 					<div class="input-field">
-						<textarea name="message" class="form-control" rows="12" placeholder="Messages..."></textarea>
+						<textarea id="message" name="message"  class="form-control" rows="12" placeholder="Messages..."></textarea>
 					</div>
-					   <button type="submit" id="submit" class="btn btn-blue btn-effect">Send</button>
+					   <button type="submit" name="submit"  class="btn btn-blue btn-effect">Send</button>
+                
 				</form>
 			</div>
 
 			<div class="col-md-5 wow animated fadeInRight">
-				<address class="contact-details">
+				<address class="contact-details"></address>
 					<h3>Contact Us</h3>
 					
 					<p><i class="fa fa-envelope"></i>SpaceCrew@gmail.com</p>
+
 				</address>
 			</div>
 
