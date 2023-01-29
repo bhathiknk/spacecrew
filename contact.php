@@ -1,5 +1,6 @@
 <?php include_once('./log/inc/conn.php');?>
 
+
 <?php
 
     if(isset($_POST['submit'])){
@@ -19,8 +20,8 @@
         if($result){
             $msg = "
             
-            <div class='alert alert-primary alert-dismissible fade show' role='alert'>
-            <strong>Post Create Success!</strong> Your Post visibale now.
+            <div class='alert alert-primary alert-dismissible ' role='alert'>
+            <strong>Your massage send successfully!</strong> Thanks for your feedback.
             <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
               <span aria-hidden='true'>&times;</span>
             </button>
@@ -155,6 +156,7 @@
 		<div class="row">
 
 			<div class="sec-title text-center wow animated fadeInDown">
+            <?php if(!empty($msg)){echo $msg;}?>
            
 				<h2>Contact</h2>
 				<p>Leave a Message</p>
@@ -163,7 +165,6 @@
 
 			<div class="col-md-7 contact-form wow animated fadeInLeft">
 				<form action="contact.php" method="POST">
-                <?php if(!empty($msg)){echo $msg;}?>
 
 					<div class="input-field">
 						<input type="text" id="name" name="name" class="form-control" placeholder="Your Name...">
